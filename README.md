@@ -27,5 +27,4 @@ additional types, which can be easily built on top of this package.
         ],
         
 ### Dependencies
-§
 There are no dependencies on macOS apart from the Accelerate framework, which is installed by default. 
