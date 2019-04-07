@@ -59,7 +59,7 @@ class CblasTests: XCTestCase {
         XCTAssertEqual(a, [1, 4])
     }
 
-    static var allTests: [(String, (cblasTests) -> () throws -> Void)] {
+    static var allTests: [(String, (CblasTests) -> () throws -> Void)] {
         return [
             ("testScalFloat", testScalFloat),
             ("testScalDouble", testScalDouble),

@@ -101,7 +101,7 @@ class VDSPTests: XCTestCase {
         XCTAssertEqual(A.mmul(B: B, m: 3, n: 3, p: 2), AB)
     }
 
-    static var allTests: [(String, (vDSPTests) -> () throws -> Void)] {
+    static var allTests: [(String, (VDSPTests) -> () throws -> Void)] {
         return [
             ("testVrampFloat", testVrampFloat),
             ("testVrampDouble", testVrampDouble),

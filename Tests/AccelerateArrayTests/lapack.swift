@@ -94,7 +94,7 @@ class LapackTests: XCTestCase {
         XCTAssertEqual(x1, x2, accuracy: 1e-15)
     }
 
-    static var allTests: [(String, (lapackTests) -> () throws -> Void)] {
+    static var allTests: [(String, (LapackTests) -> () throws -> Void)] {
         return [
             ("testGetrfDouble", testGetrfDouble),
             ("testGetriDouble", testGetriDouble),

@@ -139,7 +139,7 @@ public extension Array where Element == Double {
     ///
     /// http://www.netlib.org/lapack/explore-html/d7/d3b/group__double_g_esolve_ga5ee879032a8365897c3ba91e3dc8d512.html#ga5ee879032a8365897c3ba91e3dc8d512
     mutating func gesv(B: inout [Element]) throws {
-        var ipiv: [Int32] = [repeating: 0, count: n]
+        var ipiv: [Int32] = [Int32].init(repeating: 0, count: n)
         try gesv(ipiv: &ipiv, B: &B)
     }
 
