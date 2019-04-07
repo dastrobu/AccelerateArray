@@ -1,0 +1,30 @@
+# make sudo to enforce running on a real linux VM and not in a container on a macOS VM.
+sudo: required
+# do not use swift as language, since otherwise the build always runs on a macOS VM.
+language: generic
+osx_image: xcode10.2
+
+compiler:
+  - clang
+
+os:
+  - osx
+
+env:
+  - SWIFT_VERSION=4.0
+  - SWIFT_VERSION=4.1
+  - SWIFT_VERSION=4.2
+  - SWIFT_VERSION=5.0
+
+install:
+  - eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
+  - swift --version
+
+script:
+  - swift build
+  - swift test
+  - |
+    # lint on osx only (no need to do this on every platform)
+    if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      swiftlint --strict
+    fi

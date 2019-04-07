@@ -1,0 +1,10 @@
+.DS_Store
+/.build
+/Packages
+/*.xcodeproj
+
+*.log
+*.bak
+
+.idea
+
