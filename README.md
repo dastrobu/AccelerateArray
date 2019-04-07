@@ -26,5 +26,10 @@ additional types, which can be easily built on top of this package.
             .package(url: "https://github.com/dastrobu/AccelerateArray.git", from: "0.0.0"),
         ],
         
+### Cocoa Pods
+Make sure a valid deployment target is setup in the Podfile and add
+
+    pod 'AccelerateArray', '~> 0'
+    
 ### Dependencies
 There are no dependencies on macOS apart from the Accelerate framework, which is installed by default. 
