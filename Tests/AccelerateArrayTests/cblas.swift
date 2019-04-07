@@ -1,7 +1,7 @@
 import XCTest
 @testable import AccelerateArray
 
-class cblasTests: XCTestCase {
+class CblasTests: XCTestCase {
 
     func testScalFloat() {
         var a: [Float] = []

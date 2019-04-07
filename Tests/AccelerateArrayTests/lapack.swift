@@ -1,7 +1,7 @@
 import XCTest
 @testable import AccelerateArray
 
-class lapackTests: XCTestCase {
+class LapackTests: XCTestCase {
     func testGetrfDouble() throws {
         // A in row major
         let A: [Double] = [

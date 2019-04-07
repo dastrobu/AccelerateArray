@@ -1,20 +1,20 @@
 import XCTest
 @testable import AccelerateArray
 
-class vDSPTests: XCTestCase {
+class VDSPTests: XCTestCase {
 
     func testVrampFloat() {
-        XCTAssertEqual(Array<Float>(start: 0.0, stop: 1.0, step: 1.0), [0.0])
-        XCTAssertEqual(Array<Float>(start: 0.0, stop: 2.0, step: 1.1), [0.0, 1.1])
-        XCTAssertEqual(Array<Float>(start: -1.0, stop: 2.0, step: 1.0), [-1.0, 0.0, 1.0])
-        XCTAssertEqual(Array<Float>(start: -1.0, stop: -3.0, step: -1.0), [-1.0, -2.0])
+        XCTAssertEqual([Float].init(start: 0.0, stop: 1.0, step: 1.0), [0.0])
+        XCTAssertEqual([Float].init(start: 0.0, stop: 2.0, step: 1.1), [0.0, 1.1])
+        XCTAssertEqual([Float].init(start: -1.0, stop: 2.0, step: 1.0), [-1.0, 0.0, 1.0])
+        XCTAssertEqual([Float].init(start: -1.0, stop: -3.0, step: -1.0), [-1.0, -2.0])
     }
 
     func testVrampDouble() {
-        XCTAssertEqual(Array<Double>(start: 0.0, stop: 1.0, step: 1.0), [0.0])
-        XCTAssertEqual(Array<Double>(start: 0.0, stop: 2.0, step: 1.1), [0.0, 1.1])
-        XCTAssertEqual(Array<Double>(start: -1.0, stop: 2.0, step: 1.0), [-1.0, 0.0, 1.0])
-        XCTAssertEqual(Array<Double>(start: -1.0, stop: -3.0, step: -1.0), [-1.0, -2.0])
+        XCTAssertEqual([Double].init(start: 0.0, stop: 1.0, step: 1.0), [0.0])
+        XCTAssertEqual([Double].init(start: 0.0, stop: 2.0, step: 1.1), [0.0, 1.1])
+        XCTAssertEqual([Double].init(start: -1.0, stop: 2.0, step: 1.0), [-1.0, 0.0, 1.0])
+        XCTAssertEqual([Double].init(start: -1.0, stop: -3.0, step: -1.0), [-1.0, -2.0])
     }
 
     func testMtransFloatWhenEmpty() {

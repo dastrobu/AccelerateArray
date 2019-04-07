@@ -43,7 +43,7 @@ public extension Array where Element == Float {
 
         var C: [Element] = Array(repeating: 0, count: count)
         mtrans(C: &C, strideC: 1, m: m, n: n)
-        return C;
+        return C
     }
 
     /// Creates a transposed matrix C from a source matrix A.
@@ -55,7 +55,7 @@ public extension Array where Element == Float {
     ///     - m: number of columns
     ///     - n: number of rows
     func mtrans(strideA: Int = 1, C: inout [Element], strideC: Int, m: Int, n: Int) {
-        vDSP_mtrans(self, strideA, &C, strideC, vDSP_Length(m), vDSP_Length(n));
+        vDSP_mtrans(self, strideA, &C, strideC, vDSP_Length(m), vDSP_Length(n))
     }
 
     /// Performs an out-of-place multiplication of two matrices.
@@ -71,7 +71,7 @@ public extension Array where Element == Float {
         assert(count == m * p, "\(count) == \(m) * \(p)")
         var C: [Element] = Array(repeating: 0, count: Int(m * n))
         mmul(B: B, strideB: strideB, C: &C, m: m, n: n, p: p)
-        return C;
+        return C
     }
 
     /// Performs an out-of-place multiplication of two matrices.
@@ -138,7 +138,7 @@ public extension Array where Element == Double {
 
         var C: [Element] = Array(repeating: 0, count: count)
         mtrans(C: &C, strideC: 1, m: m, n: n)
-        return C;
+        return C
     }
 
     /// Creates a transposed matrix C from a source matrix A.
@@ -148,7 +148,7 @@ public extension Array where Element == Double {
     ///     - m: number of columns
     ///     - n: number of rows
     func mtrans(strideA: Int = 1, C: inout [Element], strideC: Int, m: Int, n: Int) {
-        vDSP_mtransD(self, strideA, &C, strideC, vDSP_Length(m), vDSP_Length(n));
+        vDSP_mtransD(self, strideA, &C, strideC, vDSP_Length(m), vDSP_Length(n))
     }
 
     /// Performs an out-of-place multiplication of two matrices.
@@ -169,7 +169,7 @@ public extension Array where Element == Double {
 
         var C: [Element] = Array(repeating: 0, count: Int(m * n))
         mmul(B: B, strideB: strideB, C: &C, m: m, n: n, p: p)
-        return C;
+        return C
     }
 
     /// Performs an out-of-place multiplication of two matrices.
@@ -192,4 +192,3 @@ public extension Array where Element == Double {
         vDSP_mmulD(self, strideA, B, strideB, &C, strideC, vDSP_Length(m), vDSP_Length(n), vDSP_Length(p))
     }
 }
-

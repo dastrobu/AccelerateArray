@@ -17,4 +17,3 @@ public func XCTAssertEqual<T>(_ expression1: @autoclosure () throws -> [T],
         XCTAssertEqual(array1[i], array2[i], accuracy: accuracy, "index: \(i)", file: file, line: line)
     }
 }
-
