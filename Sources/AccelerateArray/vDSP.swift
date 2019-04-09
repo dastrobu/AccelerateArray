@@ -19,7 +19,7 @@ public extension Array where Element == Float {
 
     /// Build ramped vector
     /// https://developer.apple.com/documentation/accelerate/1450369-vdsp_vramp
-    init(start: Element, step: Element, n: Int) {
+    init(start: Element = 0.0, step: Element = 1.0, n: Int) {
         self.init(repeating: 0, count: n)
         var a = start
         var b = step
@@ -114,7 +114,7 @@ public extension Array where Element == Double {
 
     /// Build ramped vector
     /// https://developer.apple.com/documentation/accelerate/1449999-vdsp_vrampd
-    init(start: Element, step: Element, n: Int) {
+    init(start: Element = 0.0, step: Element = 1.0, n: Int) {
         self.init(repeating: 0, count: n)
         var a = start
         var b = step
