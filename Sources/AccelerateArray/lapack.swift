@@ -174,8 +174,53 @@ public extension Array where Element == Double {
         assert(ldb >= Swift.max(1, n), "\(ldb) >= max(1, \(n))")
 
         var info: Int32 = 0
-
         dgesv_(&n, &nrhs, &self, &lda, &ipiv, &B, &ldb, &info)
+        if info != 0 {
+            throw LapackError.dgesv(info)
+        }
+    }
+
+    /// DGTSV  solves the equation
+    ///
+    ///    A*X = B,
+    ///
+    /// where A is an n by n tridiagonal matrix, by Gaussian elimination with
+    /// partial pivoting.
+    ///
+    /// Note that the equation  A**T*X = B  may be solved by interchanging the
+    /// order of the arguments DU and DL.
+    ///
+    /// This array represents the diagonal of A.
+    ///
+    /// http://www.netlib.org/lapack/explore-html/d4/d62/group__double_g_tsolve_ga2bf93f2ddefa5e671866eb2191dc19d4.html#ga2bf93f2ddefa5e671866eb2191dc19d4
+    ///
+    /// - Parameters:
+    ///     - nrhs: The number of right hand sides, i.e., the number of columns of the matrix B.  NRHS >= 0.
+    ///     - dl: On entry, DL must contain the (n-1) sub-diagonal elements of A.
+    ///           On exit, DL is overwritten by the (n-2) elements of the
+    ///           second super-diagonal of the upper triangular matrix U from
+    ///           the LU factorization of A, in DL(1), ..., DL(n-2).
+    ///     - du: On entry, DU must contain the (n-1) super-diagonal elements of A.
+    ///           On exit, DU is overwritten by the (n-1) elements of the first
+    ///           super-diagonal of U.
+    ///     - B:   On entry, the N by NRHS matrix of right hand side matrix B.
+    ///            On exit, if no error was thrown, the N by NRHS solution matrix X.
+    ///
+    mutating func gtsv(nrhs: Int, dl: inout [Double], du: inout [Double], B: inout [Double]) throws {
+        assert(count - 1 == dl.count, "\(count) - 1 == \(dl.count)")
+        assert(count - 1 == du.count, "\(count) - 1 == \(du.count)")
+        var n = Int32(count)
+
+        var nrhs = Int32(B.count / Int(n))
+        assert(nrhs >= 1, "\(nrhs) >= 1")
+        assert(B.count == Int(nrhs) * count, "\(B.count) == \(nrhs) * \(n)")
+
+        var ldb = Int32(B.count / Int(nrhs))
+        assert(ldb * nrhs == B.count, "\(ldb) * \(nrhs) == \(B.count)")
+        assert(ldb >= Swift.max(1, n), "\(ldb) >= max(1, \(n))")
+
+        var info: Int32 = 0
+        dgtsv_(&n, &nrhs, &dl, &self, &du, &B, &ldb, &info)
         if info != 0 {
             throw LapackError.dgesv(info)
         }
