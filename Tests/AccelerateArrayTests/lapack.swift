@@ -38,7 +38,7 @@ class LapackTests: XCTestCase {
 
         let n = 4
         var P: [Double] = Array(repeating: 0, count: n * n)
-        for i in 0 ..< p.count {
+        for i in 0..<p.count {
             // i iterates columns of P (in row major)
             // p[i] indicates which element in the column must be set to one, to create the permutation matrix
             P[i + p[i] * n] = 1.0
@@ -72,6 +72,9 @@ class LapackTests: XCTestCase {
         ]
         // convert A to col major
         var At = A.mtrans(m: 2, n: 2)
+        let b: [Double] = [
+            1.0, 1.0
+        ]
         // B in row major
         let B: [Double] = [
             1.0, 2.0, 3.0,
@@ -84,14 +87,57 @@ class LapackTests: XCTestCase {
             -2.0, 1.0,
             1.5, -0.5,
         ]
-        // x1 is in row major
-        let x1 = Ainv.mmul(B: B, m: 2, n: 3, p: 2)
+        let x1 = Ainv.mmul(B: b, m: 2, n: 1, p: 2)
+        // X1 is in row major
+        let X1 = Ainv.mmul(B: B, m: 2, n: 3, p: 2)
 
-        // solution is stored row major in Bt
+        // solution is stored col major in Bt
         try At.gesv(B: &Bt)
-        let x2 = Bt.mtrans(m: 2, n: 3)
+        let X2 = Bt.mtrans(m: 2, n: 3)
 
-        XCTAssertEqual(x1, x2, accuracy: 1e-15)
+        XCTAssertEqual(x1[0], X1[0], accuracy: 1e-15)
+        XCTAssertEqual(x1[1], X1[3], accuracy: 1e-15)
+        XCTAssertEqual(X1, X2, accuracy: 1e-15)
+    }
+
+    func testGtsvDouble() throws {
+        // A in row major
+        let A: [Double] = [
+            1.0, 1.0, 0.0, 0.0,
+            -1.0, 2.0, 2.0, 0.0,
+            0.0, -2.0, 3.0, 3.0,
+            0.0, 0.0, -3.0, 4.0,
+        ]
+        // convert A to col major
+        var At = A.mtrans(m: 4, n: 4)
+
+        // diagonals of A
+        var d: [Double] = [1.0, 2.0, 3.0, 4.0, ]
+        var du: [Double] = [1.0, 2.0, 3.0, ]
+        var dl: [Double] = [-1.0, -2.0, -3.0, ]
+
+        // B in row major
+        let B: [Double] = [
+            1.0, 2.0,
+            1.0, 2.0,
+            1.0, 2.0,
+            1.0, 2.0,
+        ]
+        // B in col major
+        var Bt = B.mtrans(m: 2, n: 4)
+        // make a copy of Bt
+        var Ct = Bt
+
+        // solve with general solver
+        // solution is stored col major in Ct
+        try At.gesv(B: &Ct)
+        let X1 = Ct.mtrans(m: 4, n: 2)
+
+        // solution is stored col major in Bt
+        try d.gtsv(nrhs: 2, dl: &dl, du: &du, B: &Bt)
+        let X2 = Bt.mtrans(m: 4, n: 2)
+
+        XCTAssertEqual(X1, X2, accuracy: 1e-15)
     }
 
     static var allTests: [(String, (LapackTests) -> () throws -> Void)] {
@@ -99,6 +145,7 @@ class LapackTests: XCTestCase {
             ("testGetrfDouble", testGetrfDouble),
             ("testGetriDouble", testGetriDouble),
             ("testGesvDouble", testGesvDouble),
+            ("testGtsvDouble", testGtsvDouble),
         ]
     }
 }
