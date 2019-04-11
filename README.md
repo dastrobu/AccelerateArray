@@ -23,7 +23,7 @@ additional types, which can be easily built on top of this package.
 
 ### Swift Package Manager
     dependencies: [
-            .package(url: "https://github.com/dastrobu/AccelerateArray.git", from: "0.0.0"),
+            .package(url: "https://github.com/dastrobu/AccelerateArray.git", from: "0.2.0"),
         ],
         
 ### Cocoa Pods
