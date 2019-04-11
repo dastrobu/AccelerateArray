@@ -111,6 +111,72 @@ class VDSPTests: XCTestCase {
         XCTAssertEqual(A.mmul(B: B, m: 3, n: 3, p: 2), AB)
     }
 
+    func testVpolyShouldReturnEmptyArrayWhenCoefficientsEmptyFloat() {
+        let a: [Float] = []
+        let b: [Float] = []
+        let c: [Float] = a.vpoly(b)
+        XCTAssertEqual(c, [])
+    }
+
+    func testVpolyFloat() {
+        let a: [Float] = [1, 2, 3]
+        let b: [Float] = [0, 1, 2, 3, 4]
+        XCTAssertEqual(a.vpoly(b), [3, 6, 11, 18, 27])
+    }
+
+    func testVpolyShouldRespectStrideAFloat() {
+        let a: [Float] = [1, 0, 3, 0]
+        let b: [Float] = [0, 1, 2, 3, 4]
+        XCTAssertEqual(a.vpoly(strideA: 2, b: b), [3, 4, 5, 6, 7])
+    }
+
+    func testVpolyShouldRespectStrideBFloat() {
+        let a: [Float] = [1, 3]
+        let b: [Float] = [0, 1, 2, 3]
+        XCTAssertEqual(a.vpoly(b: b, strideB: 2), [3, 5])
+    }
+
+    func testVpolyShouldRespectStrideCFloat() {
+        let a: [Float] = [1, 3]
+        let b: [Float] = [0, 2]
+        var c: [Float] = [0, 0, 0, 0]
+        a.vpoly(b: b, c: &c, strideC: 2)
+        XCTAssertEqual(c, [3, 0, 5, 0])
+    }
+
+    func testVpolyShouldReturnEmptyArrayWhenCoefficientsEmptyDouble() {
+        let a: [Double] = []
+        let b: [Double] = []
+        let c: [Double] = a.vpoly(b)
+        XCTAssertEqual(c, [])
+    }
+
+    func testVpolyDouble() {
+        let a: [Double] = [1, 2, 3]
+        let b: [Double] = [0, 1, 2, 3, 4]
+        XCTAssertEqual(a.vpoly(b), [3, 6, 11, 18, 27])
+    }
+
+    func testVpolyShouldRespectStrideADouble() {
+        let a: [Double] = [1, 0, 3, 0]
+        let b: [Double] = [0, 1, 2, 3, 4]
+        XCTAssertEqual(a.vpoly(strideA: 2, b: b), [3, 4, 5, 6, 7])
+    }
+
+    func testVpolyShouldRespectStrideBDouble() {
+        let a: [Double] = [1, 3]
+        let b: [Double] = [0, 1, 2, 3]
+        XCTAssertEqual(a.vpoly(b: b, strideB: 2), [3, 5])
+    }
+
+    func testVpolyShouldRespectStrideCDouble() {
+        let a: [Double] = [1, 3]
+        let b: [Double] = [0, 2]
+        var c: [Double] = [0, 0, 0, 0]
+        a.vpoly(b: b, c: &c, strideC: 2)
+        XCTAssertEqual(c, [3, 0, 5, 0])
+    }
+
     static var allTests: [(String, (VDSPTests) -> () throws -> Void)] {
         return [
             ("testVrampFloat", testVrampFloat),
@@ -123,6 +189,16 @@ class VDSPTests: XCTestCase {
             ("testMmulFloat", testMmulFloat),
             ("testMmulDoubleWhenEmpty", testMmulDoubleWhenEmpty),
             ("testMmulDouble", testMmulDouble),
+            ("testVpolyShouldReturnEmptyArrayWhenCoefficientsEmptyDouble", testVpolyShouldReturnEmptyArrayWhenCoefficientsEmptyDouble),
+            ("testVpolyDouble", testVpolyDouble),
+            ("testVpolyShouldRespectStrideADouble", testVpolyShouldRespectStrideADouble),
+            ("testVpolyShouldRespectStrideBDouble", testVpolyShouldRespectStrideBDouble),
+            ("testVpolyShouldRespectStrideCDouble", testVpolyShouldRespectStrideCDouble),
+            ("testVpolyShouldReturnEmptyArrayWhenCoefficientsEmptyFloat", testVpolyShouldReturnEmptyArrayWhenCoefficientsEmptyFloat),
+            ("testVpolyFloat", testVpolyFloat),
+            ("testVpolyShouldRespectStrideAFloat", testVpolyShouldRespectStrideAFloat),
+            ("testVpolyShouldRespectStrideBFloat", testVpolyShouldRespectStrideBFloat),
+            ("testVpolyShouldRespectStrideCFloat", testVpolyShouldRespectStrideCFloat),
         ]
     }
 }

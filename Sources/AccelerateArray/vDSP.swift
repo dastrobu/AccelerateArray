@@ -93,6 +93,57 @@ public extension Array where Element == Float {
               p: Int) {
         vDSP_mmul(self, strideA, B, strideB, &C, strideC, vDSP_Length(m), vDSP_Length(n), vDSP_Length(p))
     }
+
+    /// Vector polynomial evaluation.
+    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    ///
+    /// - Parameters:
+    ///     - strideA: stride for a
+    ///     - b: variable values
+    ///     - strideB: stride for b
+    ///     - c: output vector
+    ///     - strideC: stride for c
+    func vpoly(_ b: [Element]) -> [Element] {
+        return vpoly(b: b)
+    }
+
+    /// Vector polynomial evaluation.
+    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    ///
+    /// - Parameters:
+    ///     - strideA: stride for a
+    ///     - b: variable values
+    ///     - strideB: stride for b
+    ///     - c: output vector
+    ///     - strideC: stride for c
+    func vpoly(strideA: Int = 1, b: [Element], strideB: Int = 1) -> [Element] {
+        assert(b.count % strideB == 0, "\(b.count) % \(strideB) == 0")
+        var c: [Element] = Array(repeating: 0, count: b.count / strideB)
+        vpoly(strideA: strideA, b: b, strideB: strideB, c: &c)
+        return c
+    }
+
+    /// Vector polynomial evaluation.
+    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    ///
+    /// - Parameters:
+    ///     - strideA: stride for a
+    ///     - b: variable values
+    ///     - strideB: stride for b
+    ///     - c: output vector
+    ///     - strideC: stride for c
+    func vpoly(strideA: Int = 1, b: [Element], strideB: Int = 1, c: inout [Element], strideC: Int = 1) {
+        assert(b.count % strideB == 0, "\(b.count) % \(strideB) == 0")
+        assert(c.count % strideC == 0, "\(c.count) % \(strideC) == 0")
+        assert(b.count / strideB == c.count / strideC, "\(b.count) / \(strideB) == \(c.count) / \(strideC)")
+        if isEmpty {
+            return
+        }
+        assert(count % strideA == 0, "\(count) % \(strideA) == 0")
+        let p = vDSP_Length(count / strideA - 1)
+        let n = vDSP_Length(b.count / strideB)
+        vDSP_vpoly(self, strideA, b, strideB, &c, strideC, n, p)
+    }
 }
 
 /// Array extension employing the vDSP framework.
@@ -190,5 +241,56 @@ public extension Array where Element == Double {
               n: Int,
               p: Int) {
         vDSP_mmulD(self, strideA, B, strideB, &C, strideC, vDSP_Length(m), vDSP_Length(n), vDSP_Length(p))
+    }
+
+    /// Vector polynomial evaluation.
+    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    ///
+    /// - Parameters:
+    ///     - strideA: stride for a
+    ///     - b: variable values
+    ///     - strideB: stride for b
+    ///     - c: output vector
+    ///     - strideC: stride for c
+    func vpoly(_ b: [Element]) -> [Element] {
+        return vpoly(b: b)
+    }
+
+    /// Vector polynomial evaluation.
+    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    ///
+    /// - Parameters:
+    ///     - strideA: stride for a
+    ///     - b: variable values
+    ///     - strideB: stride for b
+    ///     - c: output vector
+    ///     - strideC: stride for c
+    func vpoly(strideA: Int = 1, b: [Element], strideB: Int = 1) -> [Element] {
+        assert(b.count % strideB == 0, "\(b.count) % \(strideB) == 0")
+        var c: [Element] = Array(repeating: 0, count: b.count / strideB)
+        vpoly(strideA: strideA, b: b, strideB: strideB, c: &c)
+        return c
+    }
+
+    /// Vector polynomial evaluation.
+    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    ///
+    /// - Parameters:
+    ///     - strideA: stride for a
+    ///     - b: variable values
+    ///     - strideB: stride for b
+    ///     - c: output vector
+    ///     - strideC: stride for c
+    func vpoly(strideA: Int = 1, b: [Element], strideB: Int = 1, c: inout [Element], strideC: Int = 1) {
+        assert(b.count % strideB == 0, "\(b.count) % \(strideB) == 0")
+        assert(c.count % strideC == 0, "\(c.count) % \(strideC) == 0")
+        assert(b.count / strideB == c.count / strideC, "\(b.count) / \(strideB) == \(c.count) / \(strideC)")
+        if isEmpty {
+            return
+        }
+        assert(count % strideA == 0, "\(count) % \(strideA) == 0")
+        let p = vDSP_Length(count / strideA - 1)
+        let n = vDSP_Length(b.count / strideB)
+        vDSP_vpolyD(self, strideA, b, strideB, &c, strideC, n, p)
     }
 }
