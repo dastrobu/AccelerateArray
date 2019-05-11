@@ -17,6 +17,7 @@ additional types, which can be easily built on top of this package.
 
   * [Installation](#installation)
      * [Swift Package Manager](#swift-package-manager)
+     * [Cocoa Pods](#cocoa-pods)
      * [Dependencies](#dependencies)
      
 ## Installation
@@ -32,4 +33,5 @@ Make sure a valid deployment target is setup in the Podfile and add
     pod 'AccelerateArray', '~> 0'
     
 ### Dependencies
-There are no dependencies on macOS apart from the Accelerate framework, which is installed by default. 
+There are no dependencies on macOS apart from the Accelerate framework, which is installed by default.
+Since Accelerate is also include din iOS and other Apple Platforms, this package should run on all Apple plattforms.
