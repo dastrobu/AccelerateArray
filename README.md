@@ -35,3 +35,7 @@ Make sure a valid deployment target is setup in the Podfile and add
 ### Dependencies
 There are no dependencies on macOS apart from the Accelerate framework, which is installed by default.
 Since Accelerate is also include din iOS and other Apple Platforms, this package should run on all Apple plattforms.
+
+## Docs
+
+Read the [docs](https://dastrobu.github.io/AccelerateArray/). 
