@@ -15,10 +15,18 @@ additional types, which can be easily built on top of this package.
 
 ## Table of Contents
 
-  * [Installation](#installation)
-     * [Swift Package Manager](#swift-package-manager)
-     * [Cocoa Pods](#cocoa-pods)
-     * [Dependencies](#dependencies)
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+(generated with [DocToc](https://github.com/thlorenz/doctoc))
+
+- [Installation](#installation)
+  - [Swift Package Manager](#swift-package-manager)
+  - [Cocoa Pods](#cocoa-pods)
+  - [Dependencies](#dependencies)
+- [Docs](#docs)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+(generated with [DocToc](https://github.com/thlorenz/doctoc))
      
 ## Installation
 
