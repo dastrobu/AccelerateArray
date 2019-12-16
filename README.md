@@ -3,10 +3,11 @@
 [![Swift Version](https://img.shields.io/badge/swift-5.1-blue.svg)](https://swift.org) 
 ![Platform](https://img.shields.io/badge/platform-osx--64-lightgray.svg)
 [![Build Travis-CI Status](https://travis-ci.org/dastrobu/AccelerateArray.svg?branch=master)](https://travis-ci.org/dastrobu/AccelerateArray) 
+![documentation](docs/docsets/AccelerateArray.docset/Contents/Resources/Documents/badge.svg)
 
 Swift Array Extensions for the Apple Accelerate Framework. 
 
-The goal of this package is to provide a slightly easier access to the BLAS, LAPACK and vDSP functions
+The goal of this package is to provide slightly easier access to the BLAS, LAPACK and vDSP functions
 of the [Accelerate](https://developer.apple.com/documentation/accelerate) framework, 
 to apply these functions to Float and Double swift arrays. 
 
