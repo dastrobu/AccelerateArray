@@ -3,7 +3,7 @@
 [![Swift Version](https://img.shields.io/badge/swift-5.1-blue.svg)](https://swift.org) 
 ![Platform](https://img.shields.io/badge/platform-osx--64-lightgray.svg)
 [![Build Travis-CI Status](https://travis-ci.org/dastrobu/AccelerateArray.svg?branch=master)](https://travis-ci.org/dastrobu/AccelerateArray) 
-[![documentation](docs/docsets/AccelerateArray.docset/Contents/Resources/Documents/badge.svg)](https://dastrobu.github.io/AccelerateArray/)
+[![documentation](https://github.com/dastrobu/AccelerateArray/raw/master/docs/badge.svg?sanitize=true)](https://dastrobu.github.io/AccelerateArray/)
 
 Swift Array Extensions for the Apple Accelerate Framework. 
 

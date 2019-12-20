@@ -1,0 +1,33 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/ds/code/swift/AccelerateArray/Sources/AccelerateArray/lapack.swift",
+      "line": 7,
+      "symbol": "LapackError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ds/code/swift/AccelerateArray/Sources/AccelerateArray/lapack.swift",
+      "line": 8,
+      "symbol": "LapackError.getrf(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ds/code/swift/AccelerateArray/Sources/AccelerateArray/lapack.swift",
+      "line": 9,
+      "symbol": "LapackError.getri(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ds/code/swift/AccelerateArray/Sources/AccelerateArray/lapack.swift",
+      "line": 10,
+      "symbol": "LapackError.dgesv(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/ds/code/swift/AccelerateArray"
+}
