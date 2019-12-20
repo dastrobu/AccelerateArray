@@ -8,7 +8,7 @@
 Swift Array Extensions for the Apple Accelerate Framework. 
 
 The goal of this package is to provide slightly easier access to the [BLAS](http://www.netlib.org/blas/), 
-[LAPACK](http://www.netlib.org/lapack/) and [vDSP](https://developer.apple.com/documentation/accelerate/vdsp
+[LAPACK](http://www.netlib.org/lapack/) and [vDSP](https://developer.apple.com/documentation/accelerate/vdsp) functions
 of the [Accelerate](https://developer.apple.com/documentation/accelerate) framework, 
 to apply these functions to Float and Double swift arrays. 
 
