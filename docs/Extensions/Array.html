@@ -14,7 +14,7 @@
     <a title="Array Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">AccelerateArray Docs</a> (91% documented)</p>
+        <p><a href="../index.html">AccelerateArray Docs</a> (92% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -173,6 +173,265 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>n</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>number of items</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>scaling factor</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>incX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>stride within x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>offset w.r.t to the start of the array from which to start the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa15AccelerateArraySfRszlE5axpby5alpha4beta1y7offsetX0F1YySf_SfSaySfGzS2itF"></a>
+                    <a name="//apple_ref/swift/Method/axpby(alpha:beta:y:offsetX:offsetY:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa15AccelerateArraySfRszlE5axpby5alpha4beta1y7offsetX0F1YySf_SfSaySfGzS2itF">axpby(alpha:beta:y:offsetX:offsetY:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Computes the sum of two vectors, scaling each one separately (single-precision).
+On return, the contents of vector Y are replaced with the result.
+<a href="https://developer.apple.com/documentation/accelerate/blas">https://developer.apple.com/documentation/accelerate/blas</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">axpby</span><span class="p">(</span><span class="nv">alpha</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="nv">beta</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="k">inout</span> <span class="p">[</span><span class="kt">Element</span><span class="p">],</span> <span class="nv">offsetX</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">offsetY</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>scaling factor x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>beta</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>scaling factor for y</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offsetX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>offset w.r.t to the start of the array from which to start the operation in x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offsetY</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>offset w.r.t to the start of the array from which to start the operation in y</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa15AccelerateArraySfRszlE5axpby1n5alpha4incX4beta1y0E1Y7offsetX0G1Yys5Int32V_SfALSfSaySfGzALS2itF"></a>
+                    <a name="//apple_ref/swift/Method/axpby(n:alpha:incX:beta:y:incY:offsetX:offsetY:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa15AccelerateArraySfRszlE5axpby1n5alpha4incX4beta1y0E1Y7offsetX0G1Yys5Int32V_SfALSfSaySfGzALS2itF">axpby(n:alpha:incX:beta:y:incY:offsetX:offsetY:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Computes the sum of two vectors, scaling each one separately (single-precision).
+On return, the contents of vector Y are replaced with the result.
+<a href="https://developer.apple.com/documentation/accelerate/blas">https://developer.apple.com/documentation/accelerate/blas</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">axpby</span><span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="nv">incX</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">beta</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="k">inout</span> <span class="p">[</span><span class="kt">Element</span><span class="p">],</span> <span class="nv">incY</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">offsetX</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">offsetY</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>n</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>number of items</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>scaling factor x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>incX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>stride within x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>beta</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>scaling factor for y</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>incY</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>stride within y</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offsetX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>offset w.r.t to the start of the array from which to start the operation in x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offsetY</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>offset w.r.t to the start of the array from which to start the operation in y</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
@@ -288,6 +547,265 @@
                           <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="nv">incX</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>n</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>number of items</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>scaling factor</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>incX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>stride within x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>offset w.r.t to the start of the array from which to start the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa15AccelerateArraySdRszlE5axpby5alpha4beta1y7offsetX0F1YySd_SdSaySdGzS2itF"></a>
+                    <a name="//apple_ref/swift/Method/axpby(alpha:beta:y:offsetX:offsetY:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa15AccelerateArraySdRszlE5axpby5alpha4beta1y7offsetX0F1YySd_SdSaySdGzS2itF">axpby(alpha:beta:y:offsetX:offsetY:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Computes the sum of two vectors, scaling each one separately (single-precision).
+On return, the contents of vector Y are replaced with the result.
+<a href="https://developer.apple.com/documentation/accelerate/blas">https://developer.apple.com/documentation/accelerate/blas</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">axpby</span><span class="p">(</span><span class="nv">alpha</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="nv">beta</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="k">inout</span> <span class="p">[</span><span class="kt">Element</span><span class="p">],</span> <span class="nv">offsetX</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">offsetY</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>scaling factor x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>beta</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>scaling factor for y</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offsetX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>offset w.r.t to the start of the array from which to start the operation in x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offsetY</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>offset w.r.t to the start of the array from which to start the operation in y</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sa15AccelerateArraySdRszlE5axpby1n5alpha4incX4beta1y0E1Y7offsetX0G1Yys5Int32V_SdALSdSaySdGzALS2itF"></a>
+                    <a name="//apple_ref/swift/Method/axpby(n:alpha:incX:beta:y:incY:offsetX:offsetY:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sa15AccelerateArraySdRszlE5axpby1n5alpha4incX4beta1y0E1Y7offsetX0G1Yys5Int32V_SdALSdSaySdGzALS2itF">axpby(n:alpha:incX:beta:y:incY:offsetX:offsetY:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Computes the sum of two vectors, scaling each one separately (single-precision).
+On return, the contents of vector Y are replaced with the result.
+<a href="https://developer.apple.com/documentation/accelerate/blas">https://developer.apple.com/documentation/accelerate/blas</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">axpby</span><span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="nv">incX</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">beta</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="k">inout</span> <span class="p">[</span><span class="kt">Element</span><span class="p">],</span> <span class="nv">incY</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">offsetX</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">offsetY</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>n</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>number of items</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>scaling factor x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>incX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>stride within x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>beta</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>scaling factor for y</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>incY</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>stride within y</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offsetX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>offset w.r.t to the start of the array from which to start the operation in x</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offsetY</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>offset w.r.t to the start of the array from which to start the operation in y</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

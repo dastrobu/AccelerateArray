@@ -59,12 +59,50 @@ class CblasTests: XCTestCase {
         XCTAssertEqual(a, [1, 4])
     }
 
+    func testAxpbyFloat() {
+        var a: [Float] = [1, 2]
+        var b: [Float] = [3, 4]
+        a.axpby(alpha: 2, beta: 3, y: &b)
+        XCTAssertEqual(a, [1, 2])
+        XCTAssertEqual(b, [11, 16])
+
+        b = [3, 4]
+        a.axpby(n: 1, alpha: 2, beta: 3, y: &b)
+        XCTAssertEqual(a, [1, 2])
+        XCTAssertEqual(b, [11, 4])
+
+        b = [3, 1, 4]
+        a.axpby(n: 2, alpha: 2, beta: 3, y: &b, incY: 2)
+        XCTAssertEqual(a, [1, 2])
+        XCTAssertEqual(b, [11, 1, 16])
+    }
+
+    func testAxpbyDouble() {
+        var a: [Double] = [1, 2]
+        var b: [Double] = [3, 4]
+        a.axpby(alpha: 2, beta: 3, y: &b)
+        XCTAssertEqual(a, [1, 2])
+        XCTAssertEqual(b, [11, 16])
+
+        b = [3, 4]
+        a.axpby(n: 1, alpha: 2, beta: 3, y: &b)
+        XCTAssertEqual(a, [1, 2])
+        XCTAssertEqual(b, [11, 4])
+
+        b = [3, 1, 4]
+        a.axpby(n: 2, alpha: 2, beta: 3, y: &b, incY: 2)
+        XCTAssertEqual(a, [1, 2])
+        XCTAssertEqual(b, [11, 1, 16])
+    }
+
     static var allTests: [(String, (CblasTests) -> () throws -> Void)] {
         return [
             ("testScalFloat", testScalFloat),
             ("testScalDouble", testScalDouble),
             ("testSetFloat", testSetFloat),
             ("testSetDouble", testSetDouble),
+            ("testAxpbyFloat", testAxpbyFloat),
+            ("testAxpbyDouble", testAxpbyDouble),
         ]
     }
 }
