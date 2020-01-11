@@ -7,7 +7,7 @@ import Accelerate
 public extension Array where Element == Float {
 
     /// Build ramped vector
-    /// https://developer.apple.com/documentation/accelerate/1450369-vdsp_vramp
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// full efficiency is currently blocked by
     /// https://github.com/apple/swift-evolution/blob/master/proposals/0223-array-uninitialized-initializer.md
@@ -18,7 +18,7 @@ public extension Array where Element == Float {
     }
 
     /// Build ramped vector
-    /// https://developer.apple.com/documentation/accelerate/1450369-vdsp_vramp
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     init(start: Element = 0.0, step: Element = 1.0, n: Int) {
         self.init(repeating: 0, count: n)
         var a = start
@@ -27,7 +27,7 @@ public extension Array where Element == Float {
     }
 
     /// Creates a transposed matrix C from a source matrix A.
-    /// https://developer.apple.com/documentation/accelerate/1449988-vdsp_mtrans
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// By default, assumes row major storage
     ///
@@ -47,7 +47,7 @@ public extension Array where Element == Float {
     }
 
     /// Creates a transposed matrix C from a source matrix A.
-    /// https://developer.apple.com/documentation/accelerate/1449988-vdsp_mtrans
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// By default, assumes row major storage
     ///
@@ -59,7 +59,7 @@ public extension Array where Element == Float {
     }
 
     /// Performs an out-of-place multiplication of two matrices.
-    /// https://developer.apple.com/documentation/accelerate/1449984-vdsp_mmul
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// By default, assumes row major storage
     ///
@@ -75,7 +75,7 @@ public extension Array where Element == Float {
     }
 
     /// Performs an out-of-place multiplication of two matrices.
-    /// https://developer.apple.com/documentation/accelerate/1449984-vdsp_mmul
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// By default, assumes row major storage
     ///
@@ -95,7 +95,7 @@ public extension Array where Element == Float {
     }
 
     /// Vector polynomial evaluation.
-    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// - Parameters:
     ///     - strideA: stride for a
@@ -108,7 +108,7 @@ public extension Array where Element == Float {
     }
 
     /// Vector polynomial evaluation.
-    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// - Parameters:
     ///     - strideA: stride for a
@@ -124,7 +124,7 @@ public extension Array where Element == Float {
     }
 
     /// Vector polynomial evaluation.
-    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// - Parameters:
     ///     - strideA: stride for a
@@ -153,7 +153,7 @@ public extension Array where Element == Float {
 public extension Array where Element == Double {
 
     /// Build ramped vector
-    /// https://developer.apple.com/documentation/accelerate/1449999-vdsp_vrampd
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// full efficiency is currently blocked by
     /// https://github.com/apple/swift-evolution/blob/master/proposals/0223-array-uninitialized-initializer.md
@@ -164,7 +164,7 @@ public extension Array where Element == Double {
     }
 
     /// Build ramped vector
-    /// https://developer.apple.com/documentation/accelerate/1449999-vdsp_vrampd
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     init(start: Element = 0.0, step: Element = 1.0, n: Int) {
         self.init(repeating: 0, count: n)
         var a = start
@@ -173,7 +173,7 @@ public extension Array where Element == Double {
     }
 
     /// Creates a transposed matrix C from a source matrix A.
-    /// https://developer.apple.com/documentation/accelerate/1450422-vdsp_mtransd
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// By default, assumes row major storage
     ///
@@ -193,7 +193,7 @@ public extension Array where Element == Double {
     }
 
     /// Creates a transposed matrix C from a source matrix A.
-    /// https://developer.apple.com/documentation/accelerate/1450422-vdsp_mtransd
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// - Parameters:
     ///     - m: number of columns
@@ -203,7 +203,7 @@ public extension Array where Element == Double {
     }
 
     /// Performs an out-of-place multiplication of two matrices.
-    /// https://developer.apple.com/documentation/accelerate/1450386-vdsp_mmuld
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// By default, assumes row major storage
     ///
@@ -224,7 +224,7 @@ public extension Array where Element == Double {
     }
 
     /// Performs an out-of-place multiplication of two matrices.
-    /// https://developer.apple.com/documentation/accelerate/1450386-vdsp_mmuld
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// By default, assumes row major storage
     ///
@@ -244,7 +244,7 @@ public extension Array where Element == Double {
     }
 
     /// Vector polynomial evaluation.
-    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// - Parameters:
     ///     - strideA: stride for a
@@ -257,7 +257,7 @@ public extension Array where Element == Double {
     }
 
     /// Vector polynomial evaluation.
-    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// - Parameters:
     ///     - strideA: stride for a
@@ -273,7 +273,7 @@ public extension Array where Element == Double {
     }
 
     /// Vector polynomial evaluation.
-    /// https://developer.apple.com/documentation/accelerate/1450623-vdsp_vpoly
+    /// https://developer.apple.com/documentation/accelerate/vdsp
     ///
     /// - Parameters:
     ///     - strideA: stride for a
