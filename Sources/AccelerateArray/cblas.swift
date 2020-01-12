@@ -6,13 +6,13 @@ import Accelerate
 /// Float array extension
 public extension Array where Element == Float {
     /// Multiplies each element of a vector by a constant.
-    /// https://developer.apple.com/documentation/accelerate/1513084-cblas_dscal
+    /// https://developer.apple.com/documentation/accelerate/blas
     mutating func scal(_ alpha: Element, offset: Int = 0) {
         scal(n: Int32(count - offset), alpha: alpha, offset: offset)
     }
 
     /// Multiplies each element of a vector by a constant.
-    /// https://developer.apple.com/documentation/accelerate/1513084-cblas_sscal
+    /// https://developer.apple.com/documentation/accelerate/blas
     mutating func scal(n: Int32, alpha: Element, incX: Int32 = 1, offset: Int = 0) {
         assert(offset == 0 || (offset >= 0 && offset < count),
             "\(offset) == 0 || (\(offset) >= 0 && \(offset) < \(count))")
@@ -22,13 +22,13 @@ public extension Array where Element == Float {
     }
 
     /// Modifies a vector in place, setting each element to a given value.
-    /// https://developer.apple.com/documentation/accelerate/1513226-catlas_sset
+    /// https://developer.apple.com/documentation/accelerate/blas
     mutating func set(_ alpha: Element, offset: Int = 0) {
         set(n: Int32(count - offset), alpha: alpha, offset: offset)
     }
 
     /// Modifies a vector in place, setting each element to a given value.
-    /// https://developer.apple.com/documentation/accelerate/1513226-catlas_sset
+    /// https://developer.apple.com/documentation/accelerate/blas
     mutating func set(n: Int32, alpha: Element, incX: Int32 = 1, offset: Int = 0) {
         assert(offset == 0 || (offset >= 0 && offset < count),
             "\(offset) == 0 || (\(offset) >= 0 && \(offset) < \(count))")
@@ -45,13 +45,13 @@ public extension Array where Element == Float {
 /// Double array extension
 public extension Array where Element == Double {
     /// Multiplies each element of a vector by a constant.
-    /// https://developer.apple.com/documentation/accelerate/1513084-cblas_dscal
+    /// https://developer.apple.com/documentation/accelerate/blas
     mutating func scal(_ alpha: Element, offset: Int = 0) {
         scal(n: Int32(count - offset), alpha: alpha, offset: offset)
     }
 
     /// Multiplies each element of a vector by a constant.
-    /// https://developer.apple.com/documentation/accelerate/1513084-cblas_dscal
+    /// https://developer.apple.com/documentation/accelerate/blas
     mutating func scal(n: Int32, alpha: Element, incX: Int32 = 1, offset: Int = 0) {
         assert(offset == 0 || (offset >= 0 && offset < count),
             "\(offset) == 0 || (\(offset) >= 0 && \(offset) < \(count))")
@@ -61,13 +61,13 @@ public extension Array where Element == Double {
     }
 
     /// Modifies a vector in place, setting each element to a given value.
-    /// https://developer.apple.com/documentation/accelerate/1513226-catlas_dset
+    /// https://developer.apple.com/documentation/accelerate/blas
     mutating func set(_ alpha: Element, offset: Int = 0) {
         set(n: Int32(count - offset), alpha: alpha, offset: offset)
     }
 
     /// Modifies a vector in place, setting each element to a given value.
-    /// https://developer.apple.com/documentation/accelerate/1513226-catlas_dset
+    /// https://developer.apple.com/documentation/accelerate/blas
     mutating func set(n: Int32, alpha: Element, incX: Int32 = 1, offset: Int = 0) {
         assert(offset == 0 || (offset >= 0 && offset < count),
             "\(offset) == 0 || (\(offset) >= 0 && \(offset) < \(count))")
