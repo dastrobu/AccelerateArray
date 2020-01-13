@@ -15,6 +15,10 @@ class CblasTests: XCTestCase {
         a = [1, 2]
         a.scal(2, offset: 1)
         XCTAssertEqual(a, [1, 4])
+
+        a = [1, 2, 3]
+        a.scal(n: Int32(a.count), alpha: 2, incX: 2)
+        XCTAssertEqual(a, [2, 2, 6])
     }
 
     func testScalDouble() {
@@ -29,6 +33,10 @@ class CblasTests: XCTestCase {
         a = [1, 2]
         a.scal(2, offset: 1)
         XCTAssertEqual(a, [1, 4])
+
+        a = [1, 2, 3]
+        a.scal(n: Int32(a.count), alpha: 2, incX: 2)
+        XCTAssertEqual(a, [2, 2, 6])
     }
 
     func testSetFloat() {

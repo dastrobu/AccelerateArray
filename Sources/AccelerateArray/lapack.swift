@@ -173,7 +173,7 @@ public extension Array where Element == Float {
 
     /// SGTSV  solves the equation
     ///
-    ///    A*X = B,
+    ///    A * X = B,
     ///
     /// where A is an n by n tridiagonal matrix, by Gaussian elimination with
     /// partial pivoting.
