@@ -26,10 +26,16 @@ additional types, which can be easily built on top of this package.
   - [Swift Package Manager](#swift-package-manager)
   - [Cocoa Pods](#cocoa-pods)
   - [Dependencies](#dependencies)
+- [Examples](#examples)
+  - [BLAS (ATLAS)](#blas-atlas)
+    - [Scale Vector (sscal, dscal)](#scale-vector-sscal-dscal)
+    - [Set Vector to Constant (sset, dset)](#set-vector-to-constant-sset-dset)
+  - [LAPACK](#lapack)
+    - [LU Factorization](#lu-factorization)
+    - [Inverse](#inverse)
 - [Docs](#docs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-(generated with [DocToc](https://github.com/thlorenz/doctoc))
      
 ## Installation
 
