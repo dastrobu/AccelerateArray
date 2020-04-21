@@ -17,7 +17,7 @@ class CblasTests: XCTestCase {
         XCTAssertEqual(a, [1, 4])
 
         a = [1, 2, 3]
-        a.scal(n: Int32(a.count), alpha: 2, incX: 2)
+        a.scal(n: Int32(2), alpha: 2, incX: 2)
         XCTAssertEqual(a, [2, 2, 6])
     }
 
@@ -35,7 +35,7 @@ class CblasTests: XCTestCase {
         XCTAssertEqual(a, [1, 4])
 
         a = [1, 2, 3]
-        a.scal(n: Int32(a.count), alpha: 2, incX: 2)
+        a.scal(n: Int32(2), alpha: 2, incX: 2)
         XCTAssertEqual(a, [2, 2, 6])
     }
 
