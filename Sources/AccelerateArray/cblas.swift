@@ -18,7 +18,9 @@ public extension Array where Element == Float {
             "\(offset) == 0 || (\(offset) >= 0 && \(offset) < \(count))")
         assert(n >= 0 && n <= count - offset, "\(n) >= 0 && \(n) <= \(count) - \(offset)")
         assert(incX >= 1, "\(incX) >= 1")
-        cblas_sscal(n, alpha, &self + offset, incX)
+        withUnsafeMutableBufferPointer {
+            cblas_sscal(n, alpha, $0.baseAddress! + offset, incX)
+        }
     }
 
     /// Modifies a vector in place, setting each element to a given value.
@@ -40,7 +42,9 @@ public extension Array where Element == Float {
             "\(offset) == 0 || (\(offset) >= 0 && \(offset) < \(count))")
         assert(n >= 0 && n / incX <= count - offset, "\(n) >= 0 && \(n) / \(incX) <= \(count) - \(offset)")
         assert(incX >= 1, "\(incX) >= 1")
-        catlas_sset(n, alpha, &self + offset, incX)
+        withUnsafeMutableBufferPointer {
+            catlas_sset(n, alpha, $0.baseAddress! + offset, incX)
+        }
     }
 
     /// Computes the sum of two vectors, scaling each one separately (single-precision).
@@ -75,7 +79,11 @@ public extension Array where Element == Float {
         assert(n >= 0 && n / incY <= y.count - offsetY, "\(n) >= 0 && \(n) / \(incY) <= \(y.count) - \(offsetY)")
         assert(incX >= 1, "\(incX) >= 1")
         assert(incY >= 1, "\(incY) >= 1")
-        catlas_saxpby(n, alpha, &self + offsetX, incX, beta, &y + offsetY, incY)
+        withUnsafeMutableBufferPointer { X in
+            y.withUnsafeMutableBufferPointer { Y in
+                catlas_saxpby(n, alpha, X.baseAddress! + offsetX, incX, beta, Y.baseAddress! + offsetY, incY)
+            }
+        }
     }
 
 }
@@ -98,7 +106,9 @@ public extension Array where Element == Double {
             "\(offset) == 0 || (\(offset) >= 0 && \(offset) < \(count))")
         assert(n >= 0 && n <= count - offset, "\(n) >= 0 && \(n) <= \(count) - \(offset)")
         assert(incX >= 1, "\(incX) >= 1")
-        cblas_dscal(n, alpha, &self + offset, incX)
+        withUnsafeMutableBufferPointer {
+            cblas_dscal(n, alpha, $0.baseAddress! + offset, incX)
+        }
     }
 
     /// Modifies a vector in place, setting each element to a given value.
@@ -121,7 +131,9 @@ public extension Array where Element == Double {
         assert(n >= 0 && n <= count - offset,
             "\(n) >= 0 && \(n) <= \(count) - \(offset)")
         assert(incX >= 1, "\(incX) >= 1")
-        catlas_dset(n, alpha, &self + offset, incX)
+        withUnsafeMutableBufferPointer {
+            catlas_dset(n, alpha, $0.baseAddress! + offset, incX)
+        }
     }
 
     /// Computes the sum of two vectors, scaling each one separately (single-precision).
@@ -156,6 +168,10 @@ public extension Array where Element == Double {
         assert(n >= 0 && n / incY <= y.count - offsetY, "\(n) >= 0 && \(n) / \(incY) <= \(y.count) - \(offsetY)")
         assert(incX >= 1, "\(incX) >= 1")
         assert(incY >= 1, "\(incY) >= 1")
-        catlas_daxpby(n, alpha, &self + offsetX, incX, beta, &y + offsetY, incY)
+        withUnsafeMutableBufferPointer { X in
+            y.withUnsafeMutableBufferPointer { Y in
+                catlas_daxpby(n, alpha, X.baseAddress! + offsetX, incX, beta, Y.baseAddress! + offsetY, incY)
+            }
+        }
     }
 }
