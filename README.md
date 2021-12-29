@@ -16,11 +16,10 @@ Out of scope of this package are more convenient wrappers to handle arrays as ma
 would include storing strides, shapes and order (row/column major). This would require to add 
 additional types, which can be easily built on top of this package. 
 
-## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-(generated with [DocToc](https://github.com/thlorenz/doctoc))
+## Table of Contents
 
 - [Installation](#installation)
   - [Swift Package Manager](#swift-package-manager)
