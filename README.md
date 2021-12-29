@@ -40,9 +40,14 @@ additional types, which can be easily built on top of this package.
 ## Installation
 
 ### Swift Package Manager
-    dependencies: [
-            .package(url: "https://github.com/dastrobu/AccelerateArray.git", from: "0.3.1"),
-        ],
+
+```swift
+let package = Package(
+        dependencies: [
+          .package(url: "https://github.com/dastrobu/AccelerateArray.git", from: "0.3.1"),
+        ]
+)
+```
         
 ### Cocoa Pods
 
