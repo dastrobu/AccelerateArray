@@ -1,6 +1,6 @@
 # AccelerateArray
 
-[![Swift Version](https://img.shields.io/badge/swift-5.5-blue.svg)](https://swift.org)
+[![Swift Version](https://img.shields.io/badge/swift-5.7-blue.svg)](https://swift.org)
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgray.svg)
 ![Build](https://github.com/dastrobu/AccelerateArray/actions/workflows/ci.yaml/badge.svg)
 [![documentation](https://github.com/dastrobu/AccelerateArray/raw/master/docs/badge.svg?sanitize=true)](https://dastrobu.github.io/AccelerateArray/)
