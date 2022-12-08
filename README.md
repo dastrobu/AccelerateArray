@@ -43,7 +43,7 @@ additional types, which can be easily built on top of this package.
 ```swift
 let package = Package(
         dependencies: [
-          .package(url: "https://github.com/dastrobu/AccelerateArray.git", from: "0.3.1"),
+          .package(url: "https://github.com/dastrobu/AccelerateArray.git", from: "0.4.0"),
         ]
 )
 ```
