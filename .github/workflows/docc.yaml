@@ -20,7 +20,7 @@ jobs:
           --hosting-base-path AccelerateArray 
           --disable-indexing 
           --transform-for-static-hosting
-          --include-extended-types
+          --target AccelerateArray
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
