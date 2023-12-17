@@ -16,7 +16,8 @@ let package = Package(
         var deps: [PackageDescription.Package.Dependency] = []
         #if swift(>=5.6.0)
         deps.append(
-            .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.2.0")
+//            .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.3.0")
+            .package(url: "https://github.com/apple/swift-docc-plugin", branch: "main")
         )
         #endif
         return deps
