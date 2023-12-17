@@ -171,5 +171,5 @@ try A.getri()
 
 ## Docs
 
-Read the [docs](https://dastrobu.github.io/AccelerateArray/). 
+Read the [docs](https://dastrobu.github.io/AccelerateArray/documentation/acceleratearray/swift/array). 
 
