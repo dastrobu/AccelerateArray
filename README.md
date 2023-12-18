@@ -3,7 +3,6 @@
 [![Swift Version](https://img.shields.io/badge/swift-5.9-blue.svg)](https://swift.org)
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgray.svg)
 ![Build](https://github.com/dastrobu/AccelerateArray/actions/workflows/ci.yaml/badge.svg)
-[![documentation](https://github.com/dastrobu/AccelerateArray/raw/main/docs/badge.svg?sanitize=true)](https://dastrobu.github.io/AccelerateArray/)
 
 Swift Array Extensions for the Apple Accelerate Framework. 
 
@@ -57,7 +56,7 @@ Make sure a valid deployment target is setup in the Podfile and add
 ### Dependencies
 
 There are no dependencies on macOS apart from the Accelerate framework, which is installed by default.
-Since Accelerate is also include din iOS and other Apple Platforms, this package should run on all Apple plattforms.
+Since Accelerate is also included in iOS and other Apple Platforms, this package should run on all Apple plattforms.
 
 ## Examples
 
