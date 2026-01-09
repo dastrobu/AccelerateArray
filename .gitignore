@@ -7,7 +7,9 @@
 *.log
 *.bak
 
+.swiftpm/
 build
 
+.DS_Store
 .idea
 docs

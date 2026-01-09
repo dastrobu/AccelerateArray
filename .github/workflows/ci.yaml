@@ -6,17 +6,18 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: norio-nomura/action-swiftlint@3.2.1
   macos-test:
     strategy:
       matrix:
         swift-version:
-          - "5.9"
+          - "6.1"
+          - "6.2"
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: swift-actions/setup-swift@v1
+      - uses: actions/checkout@v6
+      - uses: swift-actions/setup-swift@v3
         with:
           swift-version: ${{ matrix.swift-version }}
       - run: swift test

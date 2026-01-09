@@ -176,29 +176,4 @@ class VDSPTests: XCTestCase {
         a.vpoly(b: b, c: &c, strideC: 2)
         XCTAssertEqual(c, [3, 0, 5, 0])
     }
-
-    static var allTests: [(String, (VDSPTests) -> () throws -> Void)] {
-        return [
-            ("testVrampFloat", testVrampFloat),
-            ("testVrampDouble", testVrampDouble),
-            ("testMtransFloatWhenEmpty", testMtransFloatWhenEmpty),
-            ("testMtransFloat", testMtransFloat),
-            ("testMtransDoubleWhenEmpty", testMtransDoubleWhenEmpty),
-            ("testMtransDouble", testMtransDouble),
-            ("testMmulFloatWhenEmpty", testMmulFloatWhenEmpty),
-            ("testMmulFloat", testMmulFloat),
-            ("testMmulDoubleWhenEmpty", testMmulDoubleWhenEmpty),
-            ("testMmulDouble", testMmulDouble),
-            ("testVpolyShouldReturnEmptyArrayWhenCoefficientsEmptyDouble", testVpolyShouldReturnEmptyArrayWhenCoefficientsEmptyDouble),
-            ("testVpolyDouble", testVpolyDouble),
-            ("testVpolyShouldRespectStrideADouble", testVpolyShouldRespectStrideADouble),
-            ("testVpolyShouldRespectStrideBDouble", testVpolyShouldRespectStrideBDouble),
-            ("testVpolyShouldRespectStrideCDouble", testVpolyShouldRespectStrideCDouble),
-            ("testVpolyShouldReturnEmptyArrayWhenCoefficientsEmptyFloat", testVpolyShouldReturnEmptyArrayWhenCoefficientsEmptyFloat),
-            ("testVpolyFloat", testVpolyFloat),
-            ("testVpolyShouldRespectStrideAFloat", testVpolyShouldRespectStrideAFloat),
-            ("testVpolyShouldRespectStrideBFloat", testVpolyShouldRespectStrideBFloat),
-            ("testVpolyShouldRespectStrideCFloat", testVpolyShouldRespectStrideCFloat),
-        ]
-    }
 }

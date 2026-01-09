@@ -102,15 +102,4 @@ class CblasTests: XCTestCase {
         XCTAssertEqual(a, [1, 2])
         XCTAssertEqual(b, [11, 1, 16])
     }
-
-    static var allTests: [(String, (CblasTests) -> () throws -> Void)] {
-        return [
-            ("testScalFloat", testScalFloat),
-            ("testScalDouble", testScalDouble),
-            ("testSetFloat", testSetFloat),
-            ("testSetDouble", testSetDouble),
-            ("testAxpbyFloat", testAxpbyFloat),
-            ("testAxpbyDouble", testAxpbyDouble),
-        ]
-    }
 }
