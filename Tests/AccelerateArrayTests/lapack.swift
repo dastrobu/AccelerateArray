@@ -277,17 +277,4 @@ class LapackTests: XCTestCase {
 
         XCTAssertEqual(X1, X2, accuracy: 1e-15)
     }
-
-    static var allTests: [(String, (LapackTests) -> () throws -> Void)] {
-        return [
-            ("testGetrfFloat", testGetrfFloat),
-            ("testGetriFloat", testGetriFloat),
-            ("testGesvFloat", testGesvFloat),
-            ("testGtsvFloat", testGtsvFloat),
-            ("testGetrfDouble", testGetrfDouble),
-            ("testGetriDouble", testGetriDouble),
-            ("testGesvDouble", testGesvDouble),
-            ("testGtsvDouble", testGtsvDouble),
-        ]
-    }
 }
